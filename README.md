@@ -1,14 +1,14 @@
-# My Helm charts repository for Kubernetes applications
+# My :boat: Helm charts repository for Kubernetes applications
 
 >
 
 ### Features
 * Fluentd allows you to unify data collection and consumption for a better use and understanding of data
 
-### How to use
+### How to deploy
 
-#### Use it in your terminal
-Using it in your terminal requires [Helm](https://helm.sh/) installed in your system.
+#### Deploy it from your terminal
+Deploying it in your terminal requires [Helm](https://helm.sh/) installed in your system.
 
 ##### Add the GitHub repository to Helm
 ```
@@ -17,7 +17,12 @@ helm repo add my-helm-charts https://github.com/hfreire/my-helm-charts
 
 ##### Install Fluentd chart
 ```
-helm install my-helm-charts/fluentd
+helm install --name 1.6 my-helm-charts/fluentd
+```
+
+##### Uninstall Fluentd chart
+```
+helm delete --release 1.6 purge
 ```
 
 ### How to contribute
