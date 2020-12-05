@@ -1,0 +1,31 @@
+image:
+  repository: hfreire/fluentd
+  tag: v1.11.5-debian-arm64-1.0
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: [ ]
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: { }
+  name:
+
+podSecurityContext: { }
+
+securityContext: { }
+
+service:
+  type: ClusterIP
+
+ingress:
+  enabled: true
+
+resources: { }
+
+nodeSelector: { }
+
+tolerations: [ ]
+
+affinity: { }
