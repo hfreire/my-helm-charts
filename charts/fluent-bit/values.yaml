@@ -3,28 +3,28 @@ image:
   tag: 1.6
   pullPolicy: IfNotPresent
 
-imagePullSecrets: [ ]
+imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
 serviceAccount:
   create: true
-  annotations: { }
+  annotations: {}
   name:
 
-podSecurityContext: { }
+podSecurityContext: {}
 
-securityContext: { }
+securityContext: {}
 
-service: { }
+service: {}
 
 ingress:
   enabled: false
 
-resources: { }
+resources: {}
 
-nodeSelector: { }
+nodeSelector: {}
 
-tolerations: [ ]
+tolerations: []
 
-affinity: { }
+affinity: {}

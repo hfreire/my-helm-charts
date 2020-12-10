@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: { { include "app1.fullname" . } }
+  name: {{ include "app1.fullname" . }}
   labels:
-    { { - include "app1.labels" . | nindent 4 } }
+    {{- include "app1.labels" . | nindent 4 }}
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      { { - include "app1.selectorLabels" . | nindent 6 } }
+      {{- include "app1.selectorLabels" . | nindent 6 }}
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -19,13 +19,13 @@ spec:
   template:
     metadata:
       labels:
-        { { - include "app1.selectorLabels" . | nindent 8 } }
+        {{- include "app1.selectorLabels" . | nindent 8 }}
     spec:
-      serviceAccountName: { { include "app1.serviceAccountName" . } }
+      serviceAccountName: {{ include "app1.serviceAccountName" . }}
       containers:
-        - name: { { .Chart.Name } }
+        - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
-          imagePullPolicy: { { .Values.image.pullPolicy } }
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: TZ
               value: Europe/Stockholm
@@ -37,14 +37,14 @@ spec:
               name: 24224tcp2
               protocol: TCP
           resources:
-            { { - toYaml .Values.resources | nindent 12 } }
+            {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - mountPath: /fluentd/etc/
               name: config
-      { { - with .Values.nodeSelector } }
+      {{- with .Values.nodeSelector }}
       nodeSelector:
-        { { - toYaml . | nindent 8 } }
-      { { - end } }
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler

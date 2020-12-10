@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: "fluentd-loadbalancer"
   labels:
-    { { - include "app1.labels" . | nindent 4 } }
+    {{- include "app1.labels" . | nindent 4 }}
 spec:
   type: LoadBalancer
   externalTrafficPolicy: Cluster
@@ -15,4 +15,4 @@ spec:
       protocol: UDP
       targetPort: 5140
   selector:
-    { { - include "app1.selectorLabels" . | nindent 4 } }
+    {{- include "app1.selectorLabels" . | nindent 4 }}

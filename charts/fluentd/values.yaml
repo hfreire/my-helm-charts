@@ -3,18 +3,18 @@ image:
   tag: v1.11.5-debian-arm64-1.0
   pullPolicy: IfNotPresent
 
-imagePullSecrets: [ ]
+imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
 serviceAccount:
   create: true
-  annotations: { }
+  annotations: {}
   name:
 
-podSecurityContext: { }
+podSecurityContext: {}
 
-securityContext: { }
+securityContext: {}
 
 service:
   type: ClusterIP
@@ -22,10 +22,10 @@ service:
 ingress:
   enabled: true
 
-resources: { }
+resources: {}
 
-nodeSelector: { }
+nodeSelector: {}
 
-tolerations: [ ]
+tolerations: []
 
-affinity: { }
+affinity: {}
