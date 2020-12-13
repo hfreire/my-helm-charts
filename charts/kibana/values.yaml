@@ -1,0 +1,40 @@
+image:
+  repository: hfreire/kibana
+  tag: 7.10.0
+  pullPolicy: IfNotPresent
+
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name:
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  httpPort: 5601
+
+ingress:
+  enabled: true
+  hosts:
+    - host: kibana.k8s1.se.home
+      paths: /
+
+  tls:
+    - hosts:
+        - kibana.k8s1.se.home
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
