@@ -21,11 +21,13 @@ spec:
       labels:
         {{- include "app1.selectorLabels" . | nindent 8 }}
     spec:
-      serviceAccountName: {{ include "app1.serviceAccountName" . }}
+      serviceAccountName: { { include "app1.serviceAccountName" . } }
+      securityContext:
+        { { - toYaml .Values.podSecurityContext | nindent 8 } }
       containers:
-        - name: {{ .Chart.Name }}
+        - name: { { .Chart.Name } }
           image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          imagePullPolicy: { { .Values.image.pullPolicy } }
           env:
             - name: TZ
               value: Europe/Stockholm
@@ -37,14 +39,22 @@ spec:
               name: 24224tcp2
               protocol: TCP
           resources:
-            {{- toYaml .Values.resources | nindent 12 }}
+            { { - toYaml .Values.resources | nindent 12 } }
           volumeMounts:
             - mountPath: /fluentd/etc/
               name: config
-      {{- with .Values.nodeSelector }}
+      { { - with .Values.nodeSelector } }
       nodeSelector:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+        { { - toYaml . | nindent 8 } }
+      { { - end } }
+      { { - with .Values.affinity } }
+      affinity:
+        { { - toYaml . | nindent 8 } }
+      { { - end } }
+      { { - with .Values.tolerations } }
+      tolerations:
+        { { - toYaml . | nindent 8 } }
+      { { - end } }
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler

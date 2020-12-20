@@ -1,6 +1,6 @@
 image:
-  repository: hfreire/fluentd
-  tag: v1.11.5-debian-arm64-1.0
+  repository: fluent/fluentd-kubernetes-daemonset
+  tag: v1.11.5-debian-elasticsearch7-1.1
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -26,6 +26,21 @@ resources: {}
 
 nodeSelector: {}
 
-tolerations: []
+tolerations:
+  - effect: "NoSchedule"
+    key: "high-availability"
+    operator: "Exists"
 
-affinity: {}
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/arch
+              operator: In
+              values:
+                - amd64
+            - key: kubernetes.io/os
+              operator: In
+              values:
+                - linux
