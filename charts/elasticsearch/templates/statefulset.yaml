@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: { { include "app1.fullname" . } }
+  labels:
+    { { - include "app1.labels" . | nindent 4 } }
+spec:
+  serviceName: { { include "app1.fullname" . } }
+  replicas: 1
+  selector:
+    matchLabels:
+      { { - include "app1.selectorLabels" . | nindent 6 } }
+  template:
+    metadata:
+      labels:
+        { { - include "app1.selectorLabels" . | nindent 8 } }
+    spec:
+    { { - with .Values.imagePullSecrets } }
+    imagePullSecrets:
+    { { - toYaml . | nindent 8 } }
+    { { - end } }
+    serviceAccountName: { { include "app1.serviceAccountName" . } }
+    securityContext:
+      { { - toYaml .Values.podSecurityContext | nindent 8 } }
+    containers:
+      - name: { { .Chart.Name } }
+        image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+        imagePullPolicy: { { .Values.image.pullPolicy } }
+        env:
+          - name: ES_JAVA_OPTS
+            value: "-Xms512m -Xmx512m"
+          - name: TZ
+            value: "Europe/Stockholm"
+          - name: discovery.type
+            value: "single-node"
+        ports:
+          - name: http
+            containerPort: { { int .Values.service.httpPort } }
+            protocol: TCP
+        resources:
+          { { - toYaml .Values.resources | nindent 12 } }
+        volumeMounts:
+          - name: data
+            mountPath: /usr/share/elasticsearch/data
+            subPath: data
+    { { - with .Values.nodeSelector } }
+    nodeSelector:
+      { { - toYaml . | nindent 8 } }
+    { { - end } }
+    { { - with .Values.affinity } }
+    affinity:
+      { { - toYaml . | nindent 8 } }
+    { { - end } }
+    { { - with .Values.tolerations } }
+    tolerations:
+      { { - toYaml . | nindent 8 } }
+    { { - end } }
+    dnsPolicy: ClusterFirst
+    restartPolicy: Always
+    terminationGracePeriodSeconds: 30
+    volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: { { include "app1.fullname" . } }
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate
