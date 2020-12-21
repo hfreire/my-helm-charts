@@ -1,0 +1,53 @@
+image:
+  repository: prom/prometheus
+  tag: v2.22.1
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: [ ]
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: { }
+  name:
+
+podSecurityContext: { }
+
+securityContext: { }
+
+service:
+  type: ClusterIP
+  httpPort: 9090
+
+ingress:
+  enabled: true
+  hosts:
+    - host: prometheus.k8s1.se.home
+      paths: /
+  tls:
+    - hosts:
+        - prometheus.k8s1.se.home
+
+resources: { }
+
+nodeSelector: { }
+
+tolerations:
+  - effect: "NoSchedule"
+    key: "high-availability"
+    operator: "Exists"
+
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/arch
+              operator: In
+              values:
+                - amd64
+            - key: kubernetes.io/os
+              operator: In
+              values:
+                - linux
