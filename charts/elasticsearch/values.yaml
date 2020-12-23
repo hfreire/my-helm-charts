@@ -29,7 +29,7 @@ nodeSelector: { }
 
 tolerations:
   - effect: "NoSchedule"
-    key: "high-availability"
+    key: "ups"
     operator: "Exists"
 
 affinity:

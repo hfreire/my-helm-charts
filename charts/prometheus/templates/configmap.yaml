@@ -27,9 +27,9 @@ data:
       static_configs:
       - targets:
         - prometheus:9090
-    - job_name: 'snmp'
+    - job_name: snmp
       scrape_interval: 30s
-      scrape_timeout: 15s
+      scrape_timeout: 30s
       scheme: http
       static_configs:
         - targets:
