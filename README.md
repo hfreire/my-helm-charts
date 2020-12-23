@@ -15,6 +15,11 @@ Deploying it in your terminal requires [Helm](https://helm.sh/) installed in you
 helm repo add my-helm-charts https://github.com/hfreire/my-helm-charts
 ```
 
+##### Update Helm repository
+```
+helm repo update
+```
+
 ##### Install Fluentd chart
 ```
 helm install --name 1.6 my-helm-charts/fluentd

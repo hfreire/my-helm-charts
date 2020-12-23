@@ -3,4 +3,4 @@ name: kibana
 description:
 type: application
 version: 1.0.0
-appVersion: 7.10.0
+appVersion: 7.10.1

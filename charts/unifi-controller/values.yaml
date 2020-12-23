@@ -31,7 +31,6 @@ ingress:
   hosts:
     - host: unifi-controller.k8s1.se.home
       paths: /
-
   tls:
     - hosts:
         - unifi-controller.k8s1.se.home

@@ -29,19 +29,35 @@ spec:
           env:
             - name: TZ
               value: Europe/Stockholm
-            - name: ELASTICSEARCH_HOSTS
-              value: http://elasticsearch.default:9200
           ports:
             - name: http
               containerPort: {{ int .Values.service.httpPort }}
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - mountPath: /usr/share/kibana/config/
+              name: config
       {{- with .Values.nodeSelector }}
       nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
       terminationGracePeriodSeconds: 30
+      volumes:
+        - configMap:
+            name: {{ .Chart.Name }}
+            items:
+              - key: kibana.yml
+                path: kibana.yml
+          name: config
