@@ -7,10 +7,14 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.httpPort }}
+    - port: { { .Values.service.httpPort } }
       name: http
       protocol: TCP
       targetPort: http
+    - port: 9115
+      name: probe
+      protocol: TCP
+      targetPort: probe
     - port: 9116
       name: snmp
       protocol: TCP

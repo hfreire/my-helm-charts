@@ -31,10 +31,14 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: {{ $fullName }}
-              servicePort: {{ $svcPort }}
-          {{- end }}
-          {{- end }}
+              serviceName: { { $fullName } }
+              servicePort: { { $svcPort } }
+          { { - end } }
+          { { - end } }
+          - backend:
+              serviceName: prometheus
+              servicePort: 9115
+            path: /probe
           - backend:
               serviceName: prometheus
               servicePort: 9116

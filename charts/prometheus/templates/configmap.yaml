@@ -27,6 +27,30 @@ data:
       static_configs:
       - targets:
         - prometheus:9090
+    - job_name: blackbox
+      metrics_path: /probe
+      params:
+        module: [icmp]
+      scrape_interval: 5s
+      static_configs:
+        - targets:
+          - mik1.se.home
+          - mik2.pt.home
+          - mik3.pt.home
+          - mik4.pt.home
+          - mik5.pt.home
+          - mik7.se.home
+          - mik8.se.home
+          - lin1.exec.sh
+          - vee1.exec.sh
+          - 10.173.255.179
+      relabel_configs:
+        - source_labels: [__address__]
+          target_label: __param_target
+        - source_labels: [__param_target]
+          target_label: instance
+        - target_label: __address__
+          replacement: prometheus:9115
     - job_name: snmp
       scrape_interval: 30s
       scrape_timeout: 30s
