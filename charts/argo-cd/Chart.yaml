@@ -2,11 +2,11 @@ apiVersion: v2
 name: argo-cd
 description:
 type: application
-version: 1.0.0
+version: 1.0.1
 
 dependencies:
   - name: argo-cd
-    version: 1.7.6
+    version: 2.11.0
     repository: https://argoproj.github.io/argo-helm
   - name: argocd-notifications
     version: 1.0.11
