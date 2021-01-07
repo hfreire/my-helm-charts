@@ -3,4 +3,8 @@ name: fluentd
 description:
 type: application
 version: 1.0.0
-appVersion: v1.11.5-debian-elasticsearch7-1.1
+
+dependencies:
+  - name: fluentd
+    version: 0.1.4
+    repository: https://fluent.github.io/helm-charts
