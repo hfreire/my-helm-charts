@@ -1,3 +1,0 @@
-fluent-bit:
-  image:
-    tag: 1.6.8
