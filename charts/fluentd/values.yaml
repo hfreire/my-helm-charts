@@ -3,3 +3,14 @@ fluentd:
     tag: v1.11.5-debian-elasticsearch7-1.1
 
   kind: Deployment
+
+  extraVolumesMounts:
+    - mountPath: /fluentd/etc/
+      name: config
+
+  extraVolume:
+    - name: config
+      configMap:
+        items:
+          - key: fluent.conf
+            path: fluent.conf
