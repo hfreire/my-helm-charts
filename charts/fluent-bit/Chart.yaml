@@ -2,7 +2,7 @@ apiVersion: v2
 name: fluent-bit
 description:
 type: application
-version: 1.0.1
+version: 1.0.0
 
 dependencies:
   - name: fluent-bit
