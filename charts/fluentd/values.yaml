@@ -1,3 +1,5 @@
 fluent-bit:
   image:
     tag: v1.11.5-debian-elasticsearch7-1.1
+
+  kind: Deployment
