@@ -1,16 +1,31 @@
-fluentd:
-  image:
-    tag: v1.11.5-debian-elasticsearch7-1.1
+image:
+  repository: fluent/fluentd-kubernetes-daemonset
+  tag: v1.11.5-debian-elasticsearch7-1.1
+  pullPolicy: IfNotPresent
 
-  kind: Deployment
+imagePullSecrets: [ ]
+nameOverride: ""
+fullnameOverride: ""
 
-  extraVolumesMounts:
-    - mountPath: /fluentd/etc/
-      name: config
+serviceAccount:
+  create: true
+  annotations: { }
+  name:
 
-  extraVolume:
-    - name: config
-      configMap:
-        items:
-          - key: fluent.conf
-            path: fluent.conf
+podSecurityContext: { }
+
+securityContext: { }
+
+service:
+  type: ClusterIP
+
+ingress:
+  enabled: true
+
+resources: { }
+
+nodeSelector: { }
+
+tolerations: [ ]
+
+affinity: { }
