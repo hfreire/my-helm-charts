@@ -6,5 +6,5 @@ version: 1.0.0
 
 dependencies:
   - name: kibana
-    version: 7.9.4
-    repository: https://helm.elastic.co
+    version: 7.10.1
+    repository: https://fluent.github.io/helm-charts
