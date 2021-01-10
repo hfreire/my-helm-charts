@@ -35,10 +35,7 @@ resources: {}
 
 nodeSelector: {}
 
-tolerations:
-  - effect: "NoSchedule"
-    key: "ups"
-    operator: "Exists"
+tolerations: []
 
 affinity:
   nodeAffinity:
@@ -53,3 +50,5 @@ affinity:
               operator: In
               values:
                 - linux
+            - key: ups
+              operator: Exists

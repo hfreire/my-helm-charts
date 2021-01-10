@@ -3,4 +3,8 @@ name: kibana
 description:
 type: application
 version: 1.0.0
-appVersion: 7.10.1
+
+dependencies:
+  - name: kibana
+    version: 7.10.1
+    repository: https://helm.elastic.co
