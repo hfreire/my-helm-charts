@@ -3,4 +3,8 @@ name: grafana
 description:
 type: application
 version: 1.0.0
-appVersion: 7.3.1
+
+dependencies:
+  - name: grafana
+    version: 6.2.0
+    repository: https://grafana.github.io/helm-charts
