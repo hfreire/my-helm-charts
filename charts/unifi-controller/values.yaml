@@ -1,4 +1,4 @@
-unifi-controller:
+unifi:
   image:
     repository: linuxserver/unifi-controller
     tag: version-6.0.36
