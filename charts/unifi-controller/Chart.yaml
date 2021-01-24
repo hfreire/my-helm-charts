@@ -3,8 +3,4 @@ name: unifi-controller
 description:
 type: application
 version: 1.0.0
-
-dependencies:
-  - name: unifi
-    version: 1.3.1
-    repository: https://k8s-at-home.com/charts
+appVersion: 6.0.43

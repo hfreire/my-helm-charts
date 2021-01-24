@@ -1,3 +1,34 @@
-unifi:
-  image:
-    tag: 6.0.43
+image:
+  repository: linuxserver/unifi-controller
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name:
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  httpPort: 8443
+  stunPort: 3478
+  ctrldiscoveryPort: 1900
+  devdiscoveryPort: 10001
+
+ingress:
+  enabled: false
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
