@@ -3,14 +3,14 @@ kind: ServiceAccount
 apiVersion: v1
 metadata:
   name: deleting-pods
-  namespace: default
+  namespace: {{ .Values.restart.namespace }}
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: deleting-pods
-  namespace: default
+  namespace: {{ .Values.restart.namespace }}
 rules:
   - apiGroups: [""]
     resources: ["pods"]
@@ -21,7 +21,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: deleting-pods
-  namespace: default
+  namespace: {{ .Values.restart.namespace }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -35,7 +35,7 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: deleting-pod
-  namespace: default
+  namespace: {{ .Values.restart.namespace }}
 spec:
   concurrencyPolicy: Forbid
   schedule: "0 3 * * *"

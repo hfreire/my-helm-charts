@@ -2,3 +2,6 @@ home-assistant:
   image:
     repository: homeassistant/raspberrypi4-homeassistant
     tag: 2021.1.5
+
+restart:
+  namespace: default
