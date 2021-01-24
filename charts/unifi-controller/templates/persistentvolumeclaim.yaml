@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: { { include "app1.fullname" . } }
+  name: {{ include "app1.fullname" . }}
   labels:
-  { { - include "app1.labels" . | nindent 4 } }
+  {{- include "app1.labels" . | nindent 4 }}
 spec:
   accessModes:
     - ReadWriteOnce
