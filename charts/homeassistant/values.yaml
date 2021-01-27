@@ -5,3 +5,5 @@ home-assistant:
 
 restart:
   namespace: default
+
+  affinity: {}
