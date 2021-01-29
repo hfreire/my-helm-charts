@@ -2,14 +2,14 @@
 kind: ServiceAccount
 apiVersion: v1
 metadata:
-  name: deleting-pods
+  name: restart-home-assistant
   namespace: {{ .Values.restart.namespace }}
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: deleting-pods
+  name: restart-home-assistant
   namespace: {{ .Values.restart.namespace }}
 rules:
   - apiGroups: [""]
@@ -20,21 +20,21 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: deleting-pods
+  name: restart-home-assistant
   namespace: {{ .Values.restart.namespace }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: deleting-pods
+  name: restart-home-assistant
 subjects:
   - kind: ServiceAccount
-    name: deleting-pods
+    name: restart-home-assistant
 
 ---
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: deleting-pod
+  name: restart-home-assistant
   namespace: {{ .Values.restart.namespace }}
 spec:
   concurrencyPolicy: Forbid
@@ -45,7 +45,7 @@ spec:
       activeDeadlineSeconds: 600
       template:
         spec:
-          serviceAccountName: deleting-pods
+          serviceAccountName: restart-home-assistant
           restartPolicy: Never
           containers:
             - name: kubectl
