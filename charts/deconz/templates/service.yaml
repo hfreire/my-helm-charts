@@ -1,0 +1,26 @@
+{{- if .Values.deconz.vnc.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "deconz.fullname" . }}-vnc
+  labels:
+  {{- include "deconz.labels" . | nindent 4 }}
+  {{- if .Values.deconz.service.labels }}
+  {{ toYaml .Values.deconz.service.labels | nindent 4 }}
+  {{- end }}
+  {{- with .Values.deconz.service.annotations }}
+  annotations:
+  {{ toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  clusterIP: {{ .Values.deconz.service.clusterIP }}
+  type: LoadBalancer
+  externalTrafficPolicy: Cluster
+  ports:
+    - port: {{ .Values.deconz.service.vncPort }}
+      targetPort: vnc
+      protocol: TCP
+      name: vnc
+  selector:
+  {{- include "deconz.selectorLabels" . | nindent 4 }}
+  {{- end }}
