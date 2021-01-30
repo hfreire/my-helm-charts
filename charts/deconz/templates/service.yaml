@@ -13,7 +13,6 @@ metadata:
   {{ toYaml . | nindent 4 }}
   {{- end }}
 spec:
-  clusterIP: {{ .Values.deconz.service.clusterIP }}
   type: LoadBalancer
   externalTrafficPolicy: Cluster
   ports:
