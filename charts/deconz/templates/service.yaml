@@ -14,7 +14,6 @@ metadata:
   {{- end }}
 spec:
   type: LoadBalancer
-  externalTrafficPolicy: Cluster
   ports:
     - port: {{ .Values.deconz.service.vncPort }}
       targetPort: vnc
