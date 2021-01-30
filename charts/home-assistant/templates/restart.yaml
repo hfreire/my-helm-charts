@@ -54,7 +54,7 @@ spec:
                 - 'kubectl'
                 - 'delete'
                 - 'pod'
-                - 'homeassistant-home-assistant-0'
+                - 'home-assistant-0'
                 - '--force'
                 - '--grace-period=0'
           {{- with .Values.restart.affinity }}
