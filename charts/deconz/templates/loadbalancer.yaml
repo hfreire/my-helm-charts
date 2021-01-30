@@ -1,4 +1,4 @@
-{{- if .Values.deconz.vnc.enabled }}
+{{- if and (eq .Values.loadBalancer.enabled true) (eq .Values.deconz.vnc.enabled true) }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -14,6 +14,7 @@ metadata:
   {{- end }}
 spec:
   type: LoadBalancer
+  loadBalancerIP: {{ .Values.loadBalancer.loadBalancerIP }}
   ports:
     - port: {{ .Values.deconz.service.vncPort }}
       targetPort: vnc
