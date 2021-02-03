@@ -3,4 +3,8 @@ name: prometheus
 description:
 type: application
 version: 1.0.0
-appVersion: v2.22.1
+
+dependencies:
+  - name: prometheus
+    version: 13.2.1
+    repository: https://prometheus-community.github.io/helm-charts
