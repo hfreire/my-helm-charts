@@ -1,0 +1,8 @@
+prometheus-snmp-exporter:
+  extraConfigmapMounts:
+    - name: prometheus-snmp-exporter
+      mountPath: /etc/snmp_exporter
+      subPath: snmp.yaml
+      configMap: prometheus-snmp-exporter
+      readOnly: true
+      defaultMode: 420
