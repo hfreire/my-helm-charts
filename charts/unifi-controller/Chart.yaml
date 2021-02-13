@@ -2,5 +2,4 @@ apiVersion: v2
 name: unifi-controller
 description:
 type: application
-version: 1.0.0
-appVersion: 6.0.43
+version: 1.0.1
