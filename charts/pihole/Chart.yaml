@@ -3,8 +3,9 @@ name: pihole
 description:
 type: application
 version: 1.0.0
+appVersion: 5.2.4
 
 dependencies:
   - name: pihole
-    version: 1.7.21
+    version: 1.8.9
     repository: https://mojo2600.github.io/pihole-kubernetes
