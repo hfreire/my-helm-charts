@@ -5,4 +5,7 @@ home-assistant:
 restart:
   namespace: default
 
+  schedule: "0 */12 * * *"
+
   affinity: {}
+

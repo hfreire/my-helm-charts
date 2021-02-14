@@ -38,7 +38,7 @@ metadata:
   namespace: {{ .Values.restart.namespace }}
 spec:
   concurrencyPolicy: Forbid
-  schedule: "0 3 * * *"
+  schedule: {{ .Values.restart.schedule }}
   jobTemplate:
     spec:
       backoffLimit: 2
