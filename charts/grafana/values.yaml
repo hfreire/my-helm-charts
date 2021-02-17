@@ -1,3 +1,6 @@
 grafana:
   plugins:
     - grafana-piechart-panel
+
+  serviceMonitor:
+    enabled: true
