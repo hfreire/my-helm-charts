@@ -1,4 +1,4 @@
 influxdb:
   image:
     repository: arm64v8/influxdb
-    tag: 1.8.3
+    tag: 1.8.4
