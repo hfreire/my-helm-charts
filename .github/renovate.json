@@ -12,7 +12,7 @@
       "matchUpdateTypes": ["major"],
       "bumpVersion": "major",
       "schedule": [
-        "every 3 months on the second Tuesday of the month"
+        "after 5am and before 8am every 3 months on the second weekend of the month"
       ]
     },
     {
