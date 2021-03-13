@@ -3,6 +3,9 @@
     "config:base"
   ],
   "labels": ["dependencies"],
+  "timezone": "Europe/Stockholm",
+  "suppressNotifications": ["prIgnoreNotification"],
+  "semanticCommitScope": "{{parentDir}}",
   "packageRules": [
     {
       "datasources": ["helm"],
