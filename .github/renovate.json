@@ -5,6 +5,7 @@
   "labels": ["dependencies"],
   "packageRules": [
     {
+      "datasources": ["helm"],
       "labels": ["helm"]
     },
     {
