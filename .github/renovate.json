@@ -2,5 +2,28 @@
   "extends": [
     "config:base"
   ],
-  "labels": ["dependencies"]
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "labels": ["helm"]
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "bumpVersion": "major",
+      "schedule": [
+        "every 3 months on the second tuesday of the month"
+      ]
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "bumpVersion": "minor",
+      "schedule": [
+        "after 5am and before 8am every friday and saturday"
+      ]
+    },
+    {
+      "matchUpdateTypes": ["patch"],
+      "bumpVersion": "patch"
+    }
+  ]
 }
