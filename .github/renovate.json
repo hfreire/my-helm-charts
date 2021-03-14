@@ -9,7 +9,7 @@
   "packageRules": [
     {
       "datasources": ["helm"],
-      "labels": ["helm"]
+      "addLabels": ["helm"]
     },
     {
       "matchUpdateTypes": ["major"],
