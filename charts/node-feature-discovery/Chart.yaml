@@ -2,9 +2,9 @@ apiVersion: v2
 name: node-feature-discovery
 description:
 type: application
-version: 0.7.0
+version: 2.1.1
 
 dependencies:
   - name: node-feature-discovery
-    version: 0.7.0
+    version: 2.1.1
     repository: https://k8s-at-home.com/charts
