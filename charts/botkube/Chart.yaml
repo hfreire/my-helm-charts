@@ -1,0 +1,10 @@
+apiVersion: v2
+name: botkube
+description:
+type: application
+version: 0.12.0
+
+dependencies:
+  - name: botkube
+    version: 0.12.0
+    repository: https://infracloudio.github.io/charts
