@@ -2,12 +2,12 @@ apiVersion: v2
 name: vault
 description:
 type: application
-version: 1.11.4
+version: 1.11.2
 
 dependencies:
   - name: vault
-    version: 1.11.4
+    version: 1.11.2
     repository: https://kubernetes-charts.banzaicloud.com
   - name: vault-secrets-webhook
-    version: 1.11.4
+    version: 1.11.2
     repository: https://kubernetes-charts.banzaicloud.com
