@@ -5,9 +5,9 @@ type: application
 version: 1.11.5
 
 dependencies:
-  - name: vault-secrets-webhook
-    version: 1.11.5
-    repository: https://kubernetes-charts.banzaicloud.com
   - name: vault
     version: 1.11.5
+    repository: https://kubernetes-charts.banzaicloud.com
+  - name: vault-secrets-webhook
+    version: 1.11.4
     repository: https://kubernetes-charts.banzaicloud.com
