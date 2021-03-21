@@ -2,11 +2,3 @@ home-assistant:
   image:
     repository: homeassistant/raspberrypi4-homeassistant
     tag: 2021.3.4
-
-restart:
-  namespace: default
-
-  schedule: "0 */12 * * *"
-
-  affinity: {}
-
