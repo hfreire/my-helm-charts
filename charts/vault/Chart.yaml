@@ -10,4 +10,7 @@ dependencies:
     repository: https://kubernetes-charts.banzaicloud.com
   - name: vault-secrets-webhook
     version: 1.11.2
-    repository: https://kubernetes-charts.banzaicloud.com
+    repository: htt1ps://kubernetes-charts.banzaicloud.com
+  - name: vault-secrets-operator
+    version: 1.11.0
+    repository: https://ricoberger.github.io/helm-charts
