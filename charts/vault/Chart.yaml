@@ -5,8 +5,8 @@ type: application
 version: 1.11.2
 
 dependencies:
-  - name: vault-operator
-    version: 1.11.6
+  - name: vault
+    version: 1.11.2
     repository: https://kubernetes-charts.banzaicloud.com
   - name: vault-secrets-webhook
     version: 1.11.2
