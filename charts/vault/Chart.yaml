@@ -8,9 +8,6 @@ dependencies:
   - name: vault-operator
     version: 1.11.6
     repository: https://kubernetes-charts.banzaicloud.com
-  - name: vault
-    version: 1.11.2
-    repository: https://kubernetes-charts.banzaicloud.com
   - name: vault-secrets-webhook
     version: 1.11.2
     repository: https://kubernetes-charts.banzaicloud.com
