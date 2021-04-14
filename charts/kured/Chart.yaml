@@ -2,9 +2,9 @@ apiVersion: v2
 name: kured
 description:
 type: application
-version: 1.0.0
+version: 1.1.0
 
 dependencies:
   - name: kured
-    version: 2.4.0
+    version: 2.4.3
     repository: https://weaveworks.github.io/kured
