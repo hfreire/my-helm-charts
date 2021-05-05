@@ -1,4 +1,0 @@
-node-feature-discovery:
-  image:
-    repository: raspbernetes/node-feature-discovery
-    tag: "v0.7.0"

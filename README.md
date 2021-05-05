@@ -3,7 +3,6 @@
 >
 
 ### Features
-* Fluentd allows you to unify data collection and consumption for a better use and understanding of data
 
 ### How to deploy
 
@@ -20,14 +19,14 @@ helm repo add my-helm-charts https://github.com/hfreire/my-helm-charts
 helm repo update
 ```
 
-##### Install Fluentd chart
+##### Install a chart
 ```
-helm install --name 1.6 my-helm-charts/fluentd
+helm install --name 1.6 my-helm-charts/<chart>
 ```
 
-##### Uninstall Fluentd chart
+##### Uninstall a chart
 ```
-helm delete --release 1.6 purge
+helm uninstall --release <chart-release> purge
 ```
 
 ### How to contribute

@@ -1,7 +1,0 @@
-deconz:
-  image:
-    tag: aarch64-2.06.00
-
-loadBalancer:
-  enabled: false
-  loadBalancerIP: ""
