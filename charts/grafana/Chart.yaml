@@ -2,9 +2,9 @@ apiVersion: v2
 name: grafana
 description:
 type: application
-version: 6.6.2
+version: 6.7.0
 
 dependencies:
   - name: grafana
-    version: 6.6.2
+    version: 6.8.4
     repository: https://grafana.github.io/helm-charts
