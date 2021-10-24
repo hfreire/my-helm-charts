@@ -1,0 +1,19 @@
+apiVersion: v2
+appVersion: v1.0.0
+description: Prometheus exporter for WhGroup wine warehouse stock balance
+name: whgroup-exporter
+version: 1.0.0
+kubeVersion: ">=1.16.0-0"
+keywords:
+  - prometheus
+  - whgroup
+home: https://github.com/hfreire/whgroup-exporter
+sources:
+  - https://github.com/hfreire/whgroup-exporter
+maintainers:
+  - name: Hugo Freire
+    email: hugo@exec.sh
+dependencies:
+  - name: common
+    repository: https://library-charts.k8s-at-home.com
+    version: 4.0.1
