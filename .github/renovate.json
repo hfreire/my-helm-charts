@@ -19,9 +19,6 @@
     ],
     "executionMode": "branch"
   },
-  "allowedPostUpgradeCommands": [
-    "^sed -i"
-  ],
   "packageRules": [
     {
       "datasources": [
