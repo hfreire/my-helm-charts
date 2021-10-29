@@ -1,0 +1,27 @@
+name: publish-helm-chart
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'charts/**'
+
+permissions:
+  contents: write
+
+jobs:
+  publish-helm-chart:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Publish Helm chart
+        uses: stefanprodan/helm-gh-pages@f1701eb82e4d4b82016e7965501c8b6d79feaec9
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
