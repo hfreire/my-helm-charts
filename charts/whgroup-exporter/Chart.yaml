@@ -1,6 +1,6 @@
 apiVersion: v2
 appVersion: v1.0.1
-description: Prometheus exporter for WhGroup wine warehouse stock balance
+description: Prometheus exporter for WH Group warehouse stock balance
 name: whgroup-exporter
 version: 1.0.1
 kubeVersion: ">=1.16.0-0"
