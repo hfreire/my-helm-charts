@@ -11,7 +11,7 @@ Deploying it in your terminal requires [Helm](https://helm.sh/) installed in you
 
 ##### Add the GitHub repository to Helm
 ```
-helm repo add my-helm-charts https://github.com/hfreire/my-helm-charts
+helm repo add my-helm-charts https://hfreire.github.io/my-helm-charts
 ```
 
 ##### Update Helm repository
@@ -21,12 +21,12 @@ helm repo update
 
 ##### Install a chart
 ```
-helm install --name 1.6 my-helm-charts/<chart>
+helm install my-helm-charts/whgroup-exporter
 ```
 
 ##### Uninstall a chart
 ```
-helm uninstall --release <chart-release> purge
+helm uninstall whgroup-exporter
 ```
 
 ### How to contribute
