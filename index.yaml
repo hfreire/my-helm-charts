@@ -3,13 +3,13 @@ entries:
   whgroup-exporter:
   - apiVersion: v2
     appVersion: v1.0.10
-    created: "2021-12-27T09:23:34.806045127Z"
+    created: "2021-12-29T08:20:34.868037038Z"
     dependencies:
     - name: common
       repository: https://library-charts.k8s-at-home.com
       version: 4.2.0
     description: Prometheus exporter for WH Group warehouse stock balance
-    digest: 32e183813e6bc76eef056d514b9b1c6b5c0c102bbc801adbf131da67ad7ee902
+    digest: df7509046c9c7a047b140cbfc4bdc013a6e9fadd4d19f0eaad76b4f48a9a5294
     home: https://github.com/hfreire/whgroup-exporter
     keywords:
     - prometheus
@@ -254,4 +254,4 @@ entries:
     urls:
     - https://hfreire.github.io/my-helm-charts/whgroup-exporter-1.0.1.tgz
     version: 1.0.1
-generated: "2021-12-27T09:23:34.800662688Z"
+generated: "2021-12-29T08:20:34.863067076Z"
