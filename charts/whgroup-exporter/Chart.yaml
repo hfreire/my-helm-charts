@@ -1,5 +1,5 @@
 apiVersion: v2
-appVersion: v1.0.10
+appVersion: v1.0.11
 description: Prometheus exporter for WH Group warehouse stock balance
 name: whgroup-exporter
 version: 1.3.0
