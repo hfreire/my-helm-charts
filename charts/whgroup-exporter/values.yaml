@@ -9,7 +9,7 @@ image:
   # -- image repository
   repository: ghcr.io/hfreire/whgroup-exporter
   # -- image tag
-  tag: v1.0.14
+  tag: v1.0.15
   # -- image pull policy
   pullPolicy: IfNotPresent
 
