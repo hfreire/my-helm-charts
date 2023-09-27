@@ -22,6 +22,6 @@ jobs:
           ref: ${{ github.ref }}
 
       - name: Publish Helm chart
-        uses: stefanprodan/helm-gh-pages@0ad2bb377311d61ac04ad9eb6f252fb68e207260
+        uses: stefanprodan/helm-gh-pages@89c6698c192e70ed0e495bee7d3d1ca5b477fe82
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
